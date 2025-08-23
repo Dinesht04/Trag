@@ -1,7 +1,12 @@
-import Image from 'next/image';
+import FlipCardsSection from "@/components/flip-card-section"
 
 export default function Home() {
-  return <div>
-      Trag
-    ToDo //Color palette //Design of the Site</div>;
+  return (
+    <div className="min-h-screen py-10">
+      
+      {/* <div className="">
+        <FlipCardsSection />
+      </div> */}
+    </div>
+  )
 }
