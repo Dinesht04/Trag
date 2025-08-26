@@ -67,7 +67,7 @@ export default function HomePage() {
         className="flex items-center gap-2 mb-12"
       >
         <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-        <span className="text-gray-700 font-medium">
+        <span className="text-gray-700 py-10 font-medium">
           Available for New Projects
         </span>
       </motion.div>

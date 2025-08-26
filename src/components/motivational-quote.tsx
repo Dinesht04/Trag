@@ -2,7 +2,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 export function MotivationalQuote() {
   return (
-    <div className="flex flex-col items-center justify-center p-8 bg-white rounded-lg shadow-sm max-w-md mx-auto">
+    <div className="flex flex-col items-center justify-center p-8  rounded-lg shadow-sm max-w-md mx-auto">
       <Avatar className="w-16 h-16 mb-6">
         <AvatarImage
           src="https://tdc.org/wp-content/uploads/2012/10/Paul-Rand.jpg"

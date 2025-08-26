@@ -82,7 +82,7 @@ export function ChatAccordion() {
   };
 
   return (
-    <div className=" max-w-2xl mx-auto space-y-4 p-6 px-0  bg-white bg-opacity-30 backdrop-blur-md p-4 rounded-2xl">
+    <div className=" max-w-5xl mx-auto space-y-4 p-6 p-4 rounded-2xl">
       {faqData.map((item) => {
         const isOpen = openItems.has(item.id);
 
