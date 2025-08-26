@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+import { Button } from '@/components/ui/button';
 import {
   Card,
   CardAction,
@@ -7,19 +7,16 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+} from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 
 export default function CardDemo() {
   return (
     <Card className="w-full max-w-sm ">
       <CardHeader>
         <CardTitle>Submit your enquiry</CardTitle>
-        <CardDescription>
-          Enter your details
-        </CardDescription>
-        
+        <CardDescription>Enter your details</CardDescription>
       </CardHeader>
       <CardContent>
         <form>
@@ -38,7 +35,6 @@ export default function CardDemo() {
               <Input id="name" type="text" placeholder="Your Name" required />
             </div>
 
-          
             <div className="grid gap-2">
               <Label htmlFor="mobile">Mobile Number</Label>
               <Input
@@ -47,8 +43,8 @@ export default function CardDemo() {
                 placeholder="Your Mobile Number"
                 required
               />
-          </div>
-          <div className="grid gap-2">
+            </div>
+            <div className="grid gap-2">
               <Label htmlFor="details">Details about your enquiry</Label>
               <Input
                 id="details"
@@ -56,7 +52,7 @@ export default function CardDemo() {
                 placeholder="Details about your enquiry"
                 required
               />
-          </div>
+            </div>
           </div>
         </form>
       </CardContent>
@@ -64,8 +60,7 @@ export default function CardDemo() {
         <Button type="submit" className="w-full">
           Submit
         </Button>
-        
       </CardFooter>
     </Card>
-  )
+  );
 }

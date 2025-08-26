@@ -1,28 +1,28 @@
-"use client"
+'use client';
 
-import type React from "react"
+import type React from 'react';
 
-import { useState, useEffect, useRef } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Star, Check } from "lucide-react"
+import { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Star, Check } from 'lucide-react';
 
 const steps = [
   {
-    title: "Step 1",
-    heading: "Choose Your Plan",
-    description: "Select the best plan that suits your requirement",
+    title: 'Step 1',
+    heading: 'Choose Your Plan',
+    description: 'Select the best plan that suits your requirement',
   },
   {
-    title: "Step 2",
-    heading: "Submit Your Request",
-    description: "Use our private design portal to submit your design needs.",
+    title: 'Step 2',
+    heading: 'Submit Your Request',
+    description: 'Use our private design portal to submit your design needs.',
   },
   {
-    title: "Step 3",
-    heading: "We Deliver :)",
-    description: "Our talented team delivers in 2-3 days",
+    title: 'Step 3',
+    heading: 'We Deliver :)',
+    description: 'Our talented team delivers in 2-3 days',
   },
-]
+];
 
 const CustomCursor = ({
   isVisible,
@@ -30,10 +30,10 @@ const CustomCursor = ({
   onClick,
   containerRef,
 }: {
-  isVisible: boolean
-  position: { x: number; y: number }
-  onClick: boolean
-  containerRef: React.RefObject<HTMLDivElement>
+  isVisible: boolean;
+  position: { x: number; y: number };
+  onClick: boolean;
+  containerRef: React.RefObject<HTMLDivElement>;
 }) => {
   return (
     <AnimatePresence>
@@ -64,81 +64,81 @@ const CustomCursor = ({
         </motion.div>
       )}
     </AnimatePresence>
-  )
-}
+  );
+};
 
 const ProjectsDoneSection = () => {
-  const [currentState, setCurrentState] = useState(0)
-  const [checkedItems, setCheckedItems] = useState<number[]>([])
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 })
-  const [showCursor, setShowCursor] = useState(false)
-  const [cursorClick, setCursorClick] = useState(false)
-  const [visibleMessages, setVisibleMessages] = useState(0)
+  const [currentState, setCurrentState] = useState(0);
+  const [checkedItems, setCheckedItems] = useState<number[]>([]);
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const [showCursor, setShowCursor] = useState(false);
+  const [cursorClick, setCursorClick] = useState(false);
+  const [visibleMessages, setVisibleMessages] = useState(0);
 
-  const backlogRef = useRef<HTMLDivElement>(null)
+  const backlogRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentState((prev) => (prev + 1) % 5)
-      setCheckedItems([])
-      setVisibleMessages(0)
-    }, 4000)
+      setCurrentState((prev) => (prev + 1) % 5);
+      setCheckedItems([]);
+      setVisibleMessages(0);
+    }, 4000);
 
-    return () => clearInterval(interval)
-  }, [])
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     if (currentState === 0) {
-      setShowCursor(true)
+      setShowCursor(true);
       const checkItems = async () => {
         const calculateRelativePositions = () => {
-          if (!backlogRef.current) return []
+          if (!backlogRef.current) return [];
 
-          const containerRect = backlogRef.current.getBoundingClientRect()
-          const containerStyle = window.getComputedStyle(backlogRef.current)
-          const paddingLeft = Number.parseInt(containerStyle.paddingLeft)
-          const paddingTop = Number.parseInt(containerStyle.paddingTop)
+          const containerRect = backlogRef.current.getBoundingClientRect();
+          const containerStyle = window.getComputedStyle(backlogRef.current);
+          const paddingLeft = Number.parseInt(containerStyle.paddingLeft);
+          const paddingTop = Number.parseInt(containerStyle.paddingTop);
 
-          const baseY = paddingTop + 60
-          const itemHeight = 65
+          const baseY = paddingTop + 60;
+          const itemHeight = 65;
 
           return [
             { x: containerRect.width - 80, y: baseY + itemHeight * 0 }, // Pitch deck for Client
             { x: containerRect.width - 80, y: baseY + itemHeight * 1 }, // New infographics for Instagram
             { x: containerRect.width - 80, y: baseY + itemHeight * 2 }, // Add a contact page
             { x: containerRect.width - 80, y: baseY + itemHeight * 3 }, // New Logo
-          ]
-        }
+          ];
+        };
 
-        const positions = calculateRelativePositions()
+        const positions = calculateRelativePositions();
 
         for (let i = 0; i < 4; i++) {
-          await new Promise((resolve) => setTimeout(resolve, 800))
+          await new Promise((resolve) => setTimeout(resolve, 800));
           if (positions[i]) {
-            setCursorPosition(positions[i])
-            setCursorClick(true)
-            setTimeout(() => setCursorClick(false), 200)
-            setCheckedItems((prev) => [...prev, i])
+            setCursorPosition(positions[i]);
+            setCursorClick(true);
+            setTimeout(() => setCursorClick(false), 200);
+            setCheckedItems((prev) => [...prev, i]);
           }
         }
-        setTimeout(() => setShowCursor(false), 500)
-      }
+        setTimeout(() => setShowCursor(false), 500);
+      };
 
-      setTimeout(checkItems, 100)
+      setTimeout(checkItems, 100);
     }
-  }, [currentState])
+  }, [currentState]);
 
   useEffect(() => {
     if (currentState === 4) {
       const showMessages = async () => {
         for (let i = 0; i < 2; i++) {
-          await new Promise((resolve) => setTimeout(resolve, 1000))
-          setVisibleMessages((prev) => prev + 1)
+          await new Promise((resolve) => setTimeout(resolve, 1000));
+          setVisibleMessages((prev) => prev + 1);
         }
-      }
-      showMessages()
+      };
+      showMessages();
     }
-  }, [currentState])
+  }, [currentState]);
 
   const renderLeftContent = () => {
     switch (currentState) {
@@ -161,15 +161,20 @@ const ProjectsDoneSection = () => {
               containerRef={backlogRef}
             />
 
-            <h3 className="text-xl font-semibold mb-6 text-gray-900">Your Design Backlogs</h3>
+            <h3 className="text-xl font-semibold mb-6 text-gray-900">
+              Your Design Backlogs
+            </h3>
             <div className="space-y-5">
               {[
-                { text: "Pitch deck for Client", urgent: false },
-                { text: "New infographics for Instagram", urgent: false },
-                { text: "Add a contact page", urgent: true },
-                { text: "New Logo", urgent: false },
+                { text: 'Pitch deck for Client', urgent: false },
+                { text: 'New infographics for Instagram', urgent: false },
+                { text: 'Add a contact page', urgent: true },
+                { text: 'New Logo', urgent: false },
               ].map((item, index) => (
-                <motion.div key={index} className="flex items-center justify-between py-3">
+                <motion.div
+                  key={index}
+                  className="flex items-center justify-between py-3"
+                >
                   <div className="flex items-center gap-4">
                     <div className="w-5 h-5 border-2 border-gray-300 rounded-full flex items-center justify-center">
                       <AnimatePresence>
@@ -177,7 +182,7 @@ const ProjectsDoneSection = () => {
                           <motion.div
                             initial={{ scale: 0, rotate: -180 }}
                             animate={{ scale: 1, rotate: 0 }}
-                            transition={{ duration: 0.4, type: "spring" }}
+                            transition={{ duration: 0.4, type: 'spring' }}
                             className="w-3 h-3 bg-green-500 rounded-full flex items-center justify-center"
                           >
                             <Check className="w-2 h-2 text-white" />
@@ -185,7 +190,9 @@ const ProjectsDoneSection = () => {
                         )}
                       </AnimatePresence>
                     </div>
-                    <span className="text-base text-gray-800 font-medium">{item.text}</span>
+                    <span className="text-base text-gray-800 font-medium">
+                      {item.text}
+                    </span>
                   </div>
                   <div className="flex items-center gap-2">
                     {item.urgent && (
@@ -201,7 +208,7 @@ const ProjectsDoneSection = () => {
               ))}
             </div>
           </motion.div>
-        )
+        );
 
       case 1:
         return (
@@ -224,17 +231,33 @@ const ProjectsDoneSection = () => {
                 <motion.div
                   className="w-16 h-16 mx-auto mb-6 flex items-center justify-center"
                   animate={{ rotate: 360 }}
-                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                  transition={{
+                    duration: 2,
+                    repeat: Number.POSITIVE_INFINITY,
+                    ease: 'linear',
+                  }}
                 >
                   <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none">
                     <path d="M12 2L14 8L12 14L10 8L12 2Z" fill="white" />
                     <path d="M22 12L16 14L10 12L16 10L22 12Z" fill="white" />
                     <path d="M12 22L10 16L12 10L14 16L12 22Z" fill="white" />
                     <path d="M2 12L8 10L14 12L8 14L2 12Z" fill="white" />
-                    <path d="M18.36 5.64L14.83 9.17L11.3 5.64L14.83 2.11L18.36 5.64Z" fill="white" />
-                    <path d="M18.36 18.36L14.83 14.83L18.36 11.3L21.89 14.83L18.36 18.36Z" fill="white" />
-                    <path d="M5.64 18.36L9.17 14.83L12.7 18.36L9.17 21.89L5.64 18.36Z" fill="white" />
-                    <path d="M5.64 5.64L9.17 9.17L5.64 12.7L2.11 9.17L5.64 5.64Z" fill="white" />
+                    <path
+                      d="M18.36 5.64L14.83 9.17L11.3 5.64L14.83 2.11L18.36 5.64Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M18.36 18.36L14.83 14.83L18.36 11.3L21.89 14.83L18.36 18.36Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M5.64 18.36L9.17 14.83L12.7 18.36L9.17 21.89L5.64 18.36Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M5.64 5.64L9.17 9.17L5.64 12.7L2.11 9.17L5.64 5.64Z"
+                      fill="white"
+                    />
                   </svg>
                 </motion.div>
               </div>
@@ -250,7 +273,7 @@ const ProjectsDoneSection = () => {
               </div>
             </div>
           </motion.div>
-        )
+        );
 
       case 2:
         return (
@@ -262,15 +285,20 @@ const ProjectsDoneSection = () => {
             transition={{ duration: 0.6 }}
             className="bg-white rounded-2xl p-6 shadow-lg max-w-md mx-auto"
           >
-            <h3 className="text-xl font-semibold mb-6 text-gray-900">Your Design Backlogs</h3>
+            <h3 className="text-xl font-semibold mb-6 text-gray-900">
+              Your Design Backlogs
+            </h3>
             <div className="space-y-4">
               {[
-                { text: "Pitch deck for Client", avatar: null },
-                { text: "New infographics for Instagram", avatar: null },
-                { text: "Add a contact page", avatar: "J" },
-                { text: "New Logo", avatar: null },
+                { text: 'Pitch deck for Client', avatar: null },
+                { text: 'New infographics for Instagram', avatar: null },
+                { text: 'Add a contact page', avatar: 'J' },
+                { text: 'New Logo', avatar: null },
               ].map((item, index) => (
-                <div key={index} className="flex items-center justify-between py-3">
+                <div
+                  key={index}
+                  className="flex items-center justify-between py-3"
+                >
                   <div className="flex items-center gap-3">
                     <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
                       <Check className="w-2.5 h-2.5 text-white" />
@@ -280,17 +308,21 @@ const ProjectsDoneSection = () => {
                   <div className="flex items-center gap-3">
                     {item.avatar ? (
                       <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                        <span className="text-white text-xs font-bold">{item.avatar}</span>
+                        <span className="text-white text-xs font-bold">
+                          {item.avatar}
+                        </span>
                       </div>
                     ) : (
-                      <button className="px-3 py-1.5 bg-gray-200 text-gray-700 text-xs rounded-md">Request</button>
+                      <button className="px-3 py-1.5 bg-gray-200 text-gray-700 text-xs rounded-md">
+                        Request
+                      </button>
                     )}
                   </div>
                 </div>
               ))}
             </div>
           </motion.div>
-        )
+        );
 
       case 3:
         return (
@@ -318,7 +350,9 @@ const ProjectsDoneSection = () => {
                     <div>Branding</div>
                     <div>Website Design</div>
                     <div className="pt-2">
-                      <button className="w-full py-2 bg-gray-100 rounded text-center">Book your Slot</button>
+                      <button className="w-full py-2 bg-gray-100 rounded text-center">
+                        Book your Slot
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -330,14 +364,16 @@ const ProjectsDoneSection = () => {
                     <div>Branding</div>
                     <div>Website Design</div>
                     <div className="pt-2">
-                      <button className="w-full py-2 bg-white text-black rounded text-center">Book your Slot</button>
+                      <button className="w-full py-2 bg-white text-black rounded text-center">
+                        Book your Slot
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </motion.div>
-        )
+        );
 
       case 4:
         return (
@@ -349,7 +385,9 @@ const ProjectsDoneSection = () => {
             transition={{ duration: 0.6 }}
             className="max-w-md mx-auto space-y-4"
           >
-            <div className="text-center text-sm text-gray-600 mb-4">2 days later</div>
+            <div className="text-center text-sm text-gray-600 mb-4">
+              2 days later
+            </div>
 
             <AnimatePresence>
               {visibleMessages >= 1 && (
@@ -361,7 +399,8 @@ const ProjectsDoneSection = () => {
                 >
                   <div className="bg-blue-500 text-white rounded-2xl rounded-br-md p-4 max-w-xs">
                     <p className="text-sm mb-2">
-                      Hey John just finished with the new landing page design can we move to the development stage
+                      Hey John just finished with the new landing page design
+                      can we move to the development stage
                     </p>
                     <div className="flex items-center justify-between">
                       <span className="text-xs text-blue-100">Trag</span>
@@ -389,8 +428,9 @@ const ProjectsDoneSection = () => {
                       </div>
                       <div className="flex-1">
                         <p className="text-sm text-gray-800 mb-1">
-                          Sure Ved, the landing page looks really good our team loved the design, everything looks fine
-                          and yes we can move to the development stage as quick as possible :)
+                          Sure Ved, the landing page looks really good our team
+                          loved the design, everything looks fine and yes we can
+                          move to the development stage as quick as possible :)
                         </p>
                         <span className="text-xs text-gray-500">Gabriel</span>
                       </div>
@@ -400,21 +440,23 @@ const ProjectsDoneSection = () => {
               )}
             </AnimatePresence>
           </motion.div>
-        )
+        );
 
       default:
-        return null
+        return null;
     }
-  }
+  };
 
   return (
-    <section className="absolute -z-10 inset-0 h-full w-full 
+    <section
+      className="absolute -z-10 inset-0 h-full w-full 
 
 
 bg-[linear-gradient(to_right,#73737320_1px,transparent_1px),linear-gradient(to_bottom,#73737320_1px,transparent_1px)] 
 
 
-bg-[size:20px_20px] min-h-screen bg-gray-50 flex flex-col items-center justify-center px-4 py-8 py-16 px-4 bg-gray-50 min-h-screen flex items-center relative">
+bg-[size:20px_20px] min-h-screen bg-gray-50 flex flex-col items-center justify-center px-4 py-8 py-16 px-4 bg-gray-50 min-h-screen flex items-center relative"
+    >
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-16"
@@ -448,8 +490,12 @@ bg-[size:20px_20px] min-h-screen bg-gray-50 flex flex-col items-center justify-c
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 className="space-y-2"
               >
-                <h3 className="text-2xl font-bold text-gray-900">{step.title}</h3>
-                <h4 className="text-xl font-semibold text-gray-800">{step.heading}</h4>
+                <h3 className="text-2xl font-bold text-gray-900">
+                  {step.title}
+                </h3>
+                <h4 className="text-xl font-semibold text-gray-800">
+                  {step.heading}
+                </h4>
                 <p className="text-gray-600">{step.description}</p>
               </motion.div>
             ))}
@@ -462,14 +508,14 @@ bg-[size:20px_20px] min-h-screen bg-gray-50 flex flex-col items-center justify-c
               key={index}
               onClick={() => setCurrentState(index)}
               className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                currentState === index ? "bg-gray-900" : "bg-gray-300"
+                currentState === index ? 'bg-gray-900' : 'bg-gray-300'
               }`}
             />
           ))}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ProjectsDoneSection
+export default ProjectsDoneSection;

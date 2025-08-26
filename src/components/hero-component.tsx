@@ -1,13 +1,21 @@
-"use client"
+'use client';
 
-import { motion, AnimatePresence } from "framer-motion"
-import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { Button } from '@/components/ui/button';
 
-const targetAudiences = ["FOR STARTUPS", "FOR FOUNDERS", "FOR ENTERPRISES"]
+const targetAudiences = ['FOR STARTUPS', 'FOR FOUNDERS', 'FOR ENTERPRISES'];
 
-const AnimatedText = ({ text, delay = 0, isStatic = false }: { text: string; delay?: number; isStatic?: boolean }) => {
-  const letters = text.split("")
+const AnimatedText = ({
+  text,
+  delay = 0,
+  isStatic = false,
+}: {
+  text: string;
+  delay?: number;
+  isStatic?: boolean;
+}) => {
+  const letters = text.split('');
 
   return (
     <span className="inline-block">
@@ -23,36 +31,34 @@ const AnimatedText = ({ text, delay = 0, isStatic = false }: { text: string; del
           }}
           className="inline-block"
         >
-          {letter === " " ? "\u00A0" : letter}
+          {letter === ' ' ? '\u00A0' : letter}
         </motion.span>
       ))}
     </span>
-  )
-}
+  );
+};
 
 export default function HomePage() {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [showForAnimation, setShowForAnimation] = useState(true)
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [showForAnimation, setShowForAnimation] = useState(true);
 
   useEffect(() => {
     const forTimer = setTimeout(() => {
-      setShowForAnimation(false)
-    }, 3000) // Show FOR animation for 1.5 seconds
+      setShowForAnimation(false);
+    }, 3000); // Show FOR animation for 1.5 seconds
 
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % targetAudiences.length)
-    }, 3000) // Change every 3 seconds
+      setCurrentIndex((prev) => (prev + 1) % targetAudiences.length);
+    }, 3000); // Change every 3 seconds
 
     return () => {
-      clearInterval(interval)
-      clearTimeout(forTimer)
-    }
-  }, [])
+      clearInterval(interval);
+      clearTimeout(forTimer);
+    };
+  }, []);
 
   return (
-    <main
-      className="  flex flex-col items-center justify-center px-4 py-8"
-    >
+    <main className="  flex flex-col items-center justify-center px-4 py-8">
       {/* Available Status */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -61,7 +67,9 @@ export default function HomePage() {
         className="flex items-center gap-2 mb-12"
       >
         <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-        <span className="text-gray-700 font-medium">Available for New Projects</span>
+        <span className="text-gray-700 font-medium">
+          Available for New Projects
+        </span>
       </motion.div>
 
       {/* Main Heading */}
@@ -74,7 +82,11 @@ export default function HomePage() {
         <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-black leading-tight">
           A DEDICATED DESIGN TEAM
           <br />
-          {showForAnimation ? <AnimatedText text="FOR" delay={0.8} /> : <span className="text-black">FOR </span>}
+          {showForAnimation ? (
+            <AnimatedText text="FOR" delay={0.8} />
+          ) : (
+            <span className="text-black">FOR </span>
+          )}
           <span className="relative inline-block">
             <AnimatePresence mode="wait">
               <motion.span
@@ -88,7 +100,10 @@ export default function HomePage() {
                 }}
                 className="text-blue-500 relative inline-block"
               >
-                <AnimatedText text={targetAudiences[currentIndex].replace("FOR ", "")} delay={0.2} />
+                <AnimatedText
+                  text={targetAudiences[currentIndex].replace('FOR ', '')}
+                  delay={0.2}
+                />
 
                 {/* Selection Box Corners */}
                 <motion.div
@@ -147,11 +162,11 @@ export default function HomePage() {
           <div
             key={index}
             className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              index === currentIndex ? "bg-blue-500 w-8" : "bg-gray-300"
+              index === currentIndex ? 'bg-blue-500 w-8' : 'bg-gray-300'
             }`}
           />
         ))}
       </motion.div>
     </main>
-  )
+  );
 }
