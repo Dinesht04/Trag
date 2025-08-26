@@ -1,9 +1,35 @@
+
+import { ChatAccordion } from "@/components/chat-accordian"
+import { ComparisonTable } from "@/components/comparison-table"
+import HomePage from "@/components/hero-component"
+import { MotivationalQuote } from "@/components/motivational-quote"
+import Navbar from "@/components/navbar"
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="text-3xl font-bold underline">
-        Hello, Next.js!
-      </h1>
-    </main>
+    <>
+    <Navbar />
+    <div className=" "
+   >
+    
+
+
+      <HomePage />
+
+      <MotivationalQuote/>
+      
+
+      <div className="py-20">
+        <ChatAccordion />
+      </div>
+
+      <div className="py-20">
+        <ComparisonTable/>
+      </div>
+
+      
+     
+    </div></>
+
   )
 }

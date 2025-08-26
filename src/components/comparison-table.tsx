@@ -54,11 +54,11 @@ export function ComparisonTable() {
   ]
 
   return (
-    <div className="max-w-4xl mx-auto">
-    <div className="bg-gray-100 pb-8 shadow-xl border-2 border-dashed  overflow-hidden">
+    <div className="max-w-4xl mx-auto ">
+    <div className="bg-gray-100 pb-8 shadow-xl  overflow-hidden rounded-2xl">
       {/* Header */}
-      <div className="text-center border-2 border-dashed  py-8 px-6 mb-8 ">
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">Why choose us?</h2>
+      <div className="text-center   py-8 px-6 mb-8 ">
+        <h2 className="text-3xl font-bold text-gray-900 mb-2 ">Why choose us?</h2>
         <p className="text-gray-600 max-w-md mx-auto">
           Check out what Trag offers Vs employees and other agencies. It's quite a lot!
         </p>
