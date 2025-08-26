@@ -1,5 +1,4 @@
-import FlipCardsSection from "@/components/flip-card-section"
-import { ProjectSlider } from "@/components/project-slider"
+import { ProjectSlider } from "@/components/project-slider";
 
 export default function Home() {
   return (
