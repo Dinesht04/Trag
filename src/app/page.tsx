@@ -1,3 +1,4 @@
+
 import { ChatAccordion } from "@/components/chat-accordian"
 import { ComparisonTable } from "@/components/comparison-table"
 import HomePage from "@/components/hero-component"
@@ -29,5 +30,6 @@ export default function Home() {
       
      
     </div></>
+
   )
 }
