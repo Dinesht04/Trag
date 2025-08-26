@@ -364,7 +364,7 @@ const ProjectsDoneSection = () => {
                       Hey John just finished with the new landing page design can we move to the development stage
                     </p>
                     <div className="flex items-center justify-between">
-                      <span className="text-xs text-blue-100">Kreed</span>
+                      <span className="text-xs text-blue-100">Trag</span>
                       <div className="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center">
                         <span className="text-xs text-white">K</span>
                       </div>
