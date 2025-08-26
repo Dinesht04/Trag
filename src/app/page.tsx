@@ -1,12 +1,9 @@
-import HomePage from "@/components/hero-component"
-
 export default function Home() {
   return (
-    <div className="min-h-screen py-10">
-
-
-      <HomePage />
-     
-    </div>
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <h1 className="text-3xl font-bold underline">
+        Hello, Next.js!
+      </h1>
+    </main>
   )
 }
