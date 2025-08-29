@@ -20,35 +20,23 @@ export function OurWorkSection({
 }: OurWorkSectionProps) {
   const samples: OurWorkCardProps[] = items ?? [
     {
-      title: "sprint",
-      href: "/projects/sprint",
-      imageSrc: "/project.png",
+      title: "QuizVerse",
+      href: "https://quizverse-sigma.vercel.app/",
+      imageSrc: "/quizverse.png",
       imageAlt: "Sprint project with green gradient",
     },
     {
-      title: "Showcase Grid",
-      href: "/projects/showcase-grid",
-      imageSrc: "/project.png",
+      title: "Portfolio",
+      href: "https://pranshuraj.info",
+      imageSrc: "/portfolio.png",
       imageAlt: "Grid of showcased projects",
     },
     {
       title: "Architecture",
-      href: "/projects/architecture",
-      imageSrc: "/project.png",
+      href: "https://www.krinuh.com/",
+      imageSrc: "/p1.png",
       imageAlt: "Abstract red architectural blocks",
-    },
-    {
-    title: "sdsadsa",
-    href: "/projects/sprint",
-    imageSrc: "/project.png",
-    imageAlt: "Sprint project with green gradient",
-  },
-  {
-    title: "idks",
-    href: "/projects/showcase-grid",
-    imageSrc: "/project.png",
-    imageAlt: "Grid of showcased projects",
-  },
+    }
   ]
 
   return (
@@ -68,7 +56,7 @@ export function OurWorkSection({
             <OurWorkCard
             key={item.title}
             {...item}
-            className={index === 4 ? "sm:col-span-2" : ""}
+            className={index === 2 ? "sm:col-span-2" : ""}
             />
         ))}
       </div>

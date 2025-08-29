@@ -6,6 +6,7 @@ import ProjectsDoneSection from '@/components/how-to-component';
 import { MotivationalQuote } from '@/components/motivational-quote';
 import Navbar from '@/components/navbar';
 import { OurWorkSection } from '@/components/our-work/our-work-section';
+import PricingSection from '@/components/pricing/pricing-section';
 
 export default function Home() {
   return (
@@ -26,12 +27,16 @@ export default function Home() {
           <ComparisonTable />
         </div>
 
-        <div id='faq faq-section' className="py-10 ">
+        <div id='faqs' className="py-10 ">
           <ChatAccordion />
         </div>
 
         <div className="py-10">
           <MotivationalQuote />
+        </div>
+
+        <div>
+          <PricingSection />
         </div>
 
       </div>
