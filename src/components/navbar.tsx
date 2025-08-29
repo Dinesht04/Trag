@@ -29,12 +29,7 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <a
-                href="#achievements"
-                className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors"
-              >
-                Achievements
-              </a>
+              
               <a
                 href="#work"
                 className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors"
@@ -53,13 +48,19 @@ export default function Navbar() {
               >
                 FAQs
               </a>
+              <a
+                href="#achievements"
+                className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors"
+              >
+                Plans and Pricing
+              </a>
             </div>
           </div>
 
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button className="bg-black hover:bg-gray-800 text-white px-6 py-2 rounded-full">
-              Plans and Pricing
+              Book a Call
             </Button>
           </div>
 
