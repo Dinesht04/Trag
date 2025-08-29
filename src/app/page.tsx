@@ -5,6 +5,7 @@ import HomePage from '@/components/hero-component';
 import ProjectsDoneSection from '@/components/how-to-component';
 import { MotivationalQuote } from '@/components/motivational-quote';
 import Navbar from '@/components/navbar';
+import { OurWorkSection } from '@/components/our-work/our-work-section';
 
 export default function Home() {
   return (
@@ -13,23 +14,26 @@ export default function Home() {
       <div className=" ">
         <HomePage />
 
+        <div id='work' className='py-10'>
+          <OurWorkSection/>
+        </div>
+
+        <div id='issues&addressingThem' className="py-20 ">
+          <FlipCardsSection />
+        </div>
+
+        <div id='comparison' className="py-20">
+          <ComparisonTable />
+        </div>
+
+        <div id='faq faq-section' className="py-10 ">
+          <ChatAccordion />
+        </div>
+
         <div className="py-10">
           <MotivationalQuote />
         </div>
 
-        <div className="py-20 ">
-          <FlipCardsSection />
-        </div>
-
-        <div className="py-10 ">
-          <ChatAccordion />
-        </div>
-
-        <div className="py-20">
-          <ComparisonTable />
-        </div>
-
-        <ProjectsDoneSection />
       </div>
     </>
   );

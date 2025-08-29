@@ -127,7 +127,7 @@ export function ComparisonTable() {
 
   return (
     <div className="max-w-4xl mx-auto ">
-      <div className="bg-gray-100 pb-8 shadow-xl  overflow-hidden rounded-2xl">
+      <div className=" pb-8   overflow-hidden rounded-2xl">
         {/* Header */}
         <div className="text-center   py-8 px-6 mb-8 ">
           <h2 className="text-3xl font-bold text-gray-900 mb-2 ">
@@ -141,10 +141,10 @@ export function ComparisonTable() {
 
         {/* Table */}
         <div className="overflow-x-auto  px-8">
-          <table className="w-full bg-white">
+          <table className="w-full ">
             {/* Column Headers */}
             <thead>
-              <tr className="bg-gray-100">
+              <tr className="bg-transparent">
                 <th className="text-left py-4 px-6 min-w-fit min-w-fit  w-[210px] font-medium text-gray-500"></th>
                 <th className="text-center py-4 px-6">
                   <div className="flex justify-center space-x-2 items-center space-y-2">
@@ -170,7 +170,7 @@ export function ComparisonTable() {
             </thead>
 
             {/* Table Body */}
-            <tbody>
+            <tbody className='bg-white'>
               {features.map((row, index) => (
                 <tr
                   key={index}
