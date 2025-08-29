@@ -83,6 +83,12 @@ export function ChatAccordion() {
 
   return (
     <div className=" max-w-5xl mx-auto space-y-4 p-6 p-4 rounded-2xl">
+
+      <div className='flex flex-col space-y-4 items-center'>
+        <span className='text-center text-4xl bold'>Frequently Asked Questions</span>
+        <span className='text-center'>We Get It—Curiosity Leads to Success! <br/> Got questions? That&apos;s a great sign. Here<br/> are some</span>
+      </div>
+
       {faqData.map((item) => {
         const isOpen = openItems.has(item.id);
 

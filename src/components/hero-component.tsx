@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 
@@ -42,6 +42,38 @@ export default function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showForAnimation, setShowForAnimation] = useState(true);
 
+  const prefersReducedMotion = useReducedMotion()
+
+  // Pulse animation for the core dot (disabled if user prefers reduced motion)
+  const dotPulse = prefersReducedMotion
+    ? {}
+    : {
+        scale: [1, 1.15, 1],
+        transition: {
+          duration: 1.6,
+          repeat: Number.POSITIVE_INFINITY,
+          repeatType: "mirror",
+          ease: "easeInOut",
+        },
+      }
+
+  // Helper to render a ripple ring with a delay
+  const Ripple = ({ delay = 0 }: { delay?: number }) => (
+    <motion.span
+      aria-hidden="true"
+      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full ring-2 ring-green-500"
+      style={{ width: 8, height: 8 }}
+      initial={{ opacity: 0.5, scale: 1 }}
+      animate={{ opacity: 0, scale: 3 }}
+      transition={{
+        duration: 1.2,
+        repeat: Number.POSITIVE_INFINITY,
+        ease: [0, 0.71, 0.2, 1.01],
+        delay,
+      }}
+    />
+  );
+
   useEffect(() => {
     const forTimer = setTimeout(() => {
       setShowForAnimation(false);
@@ -61,16 +93,26 @@ export default function HomePage() {
     <main className="  flex flex-col items-center justify-center px-4 py-8">
       {/* Available Status */}
       <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="flex items-center gap-2 mb-12"
-      >
-        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-        <span className="text-gray-700 py-10 font-medium">
-          Available for New Projects
-        </span>
-      </motion.div>
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className={"flex items-center gap-2 mb-12"}
+    >
+      <div className="relative h-3 w-3" aria-hidden="true">
+        {/* Core green dot */}
+        <motion.span className="absolute inset-0 rounded-full bg-green-500" 
+         />
+
+        {/* Radiating waves (respect reduced motion) */}
+        {!prefersReducedMotion && (
+          <>
+            <Ripple delay={0} />
+          </>
+        )}
+      </div>
+
+      <span className="text-gray-700 py-12 font-medium">Available for New Projects</span>
+    </motion.div>
 
       {/* Main Heading */}
       <motion.div
@@ -147,12 +189,12 @@ export default function HomePage() {
           size="lg"
           className="bg-black hover:bg-gray-800 text-white px-8 py-4 text-lg font-medium rounded-full transition-all duration-300 hover:scale-105"
         >
-          View Plans and Pricing
+          Book a Call
         </Button>
       </motion.div>
 
       {/* Progress Indicators */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.8 }}
@@ -166,7 +208,7 @@ export default function HomePage() {
             }`}
           />
         ))}
-      </motion.div>
+      </motion.div> */}
     </main>
   );
 }
