@@ -13,14 +13,14 @@ export function MotivationalQuote() {
 
       <blockquote className="text-center mb-4">
         <p className="text-lg text-gray-700 leading-relaxed mb-1">
-          Brand is not what you say,
+          Brand is not what you say it is,
         </p>
         <p className="text-lg text-gray-700 leading-relaxed">
-          It is what they say.
+          It is what they say it is.
         </p>
       </blockquote>
 
-      <cite className="text-sm text-gray-500 font-medium">- Paul Rand</cite>
+      <cite className="text-sm text-gray-500 font-medium">- Marty Neumeier</cite>
     </div>
   );
 }

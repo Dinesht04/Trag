@@ -23,19 +23,19 @@ export function OurWorkSection({
       title: "QuizVerse",
       href: "https://quizverse-sigma.vercel.app/",
       imageSrc: "/quizverse.png",
-      imageAlt: "Sprint project with green gradient",
+      imageAlt: "Quizverse hero",
     },
     {
       title: "Portfolio",
       href: "https://pranshuraj.info",
       imageSrc: "/portfolio.png",
-      imageAlt: "Grid of showcased projects",
+      imageAlt: "Portfolio hero",
     },
     {
-      title: "Architecture",
+      title: "Store Page",
       href: "https://www.krinuh.com/",
       imageSrc: "/p1.png",
-      imageAlt: "Abstract red architectural blocks",
+      imageAlt: "Krinuh Hero",
     }
   ]
 

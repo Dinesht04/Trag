@@ -122,7 +122,7 @@ export default function HomePage() {
         className="text-center max-w-4xl mx-auto mb-8"
       >
         <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-black leading-tight">
-          A DEDICATED DESIGN TEAM
+          A DEDICATED DEV TEAM
           <br />
           {showForAnimation ? (
             <AnimatedText text="FOR" delay={0.8} />
@@ -176,7 +176,7 @@ export default function HomePage() {
         transition={{ duration: 0.8, delay: 0.4 }}
         className="text-gray-700 text-lg md:text-xl text-center max-w-2xl mx-auto mb-12 leading-relaxed"
       >
-        We don't just design, we solve your brand's biggest challenges
+        We don't just develop, we transform your ideas into reality
       </motion.p>
 
       {/* CTA Button */}

@@ -3,56 +3,44 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
-const cardData = [
+const cardData =[
   {
-    id: 1,
-    title: '1. Resource Constraints',
-    problem:
-      'Internal design teams may be understaffed or lack the specific skills needed for certain projects.',
-    solution:
-      'Trag provides access to a team of experienced designers with diverse skills, allowing clients to scale resources up or down as needed without hiring additional full-time staff.',
+    "id": 1,
+    "title": "1. Limited In-House Skillsets",
+    "problem": "Your team might be strong in one area but lack the comprehensive skills to take a digital product from concept to a fully deployed reality.",
+    "solution": "We act as your dedicated product team, providing a unified skillset that covers everything from UI/UX design to front-end and back-end development. You get the expertise you need without having to hire for multiple roles."
   },
   {
-    id: 2,
-    title: '2. High Costs',
-    problem:
-      'Maintaining an in-house design team can be expensive due to salaries, benefits, and training costs.',
-    solution:
-      "Trag's subscription model offers high-quality design services at a fraction of the cost of hiring an in-house team, making it a cost-effective solution for clients.",
+    "id": 2,
+    "title": "2. Prohibitive Costs & Hiring Delays",
+    "problem": "Hiring a full-time senior designer and a developer is a significant financial commitment involving high salaries, benefits, and a lengthy recruitment process.",
+    "solution": "Our flexible model gives you access to a complete design and development duo at a fraction of the cost. Get started immediately and scale with a predictable, cost-effective subscription."
   },
   {
-    id: 3,
-    title: '3. Managing Workloads',
-    problem:
-      'Internal teams might struggle with managing workloads, especially during peak periods or when handling multiple projects simultaneously.',
-    solution:
-      'Trag can handle fluctuating workloads by providing additional support when needed, ensuring that deadlines are met without overburdening the internal team.',
+    "id": 3,
+    "title": "3. Overwhelmed Teams & Stalled Progress",
+    "problem": "Internal teams are often stretched thin, causing feature backlogs to grow and key projects to be delayed.",
+    "solution": "As a nimble two-person team, we provide the focused firepower to clear your backlog, build out a new feature, or launch your MVP. You get our undivided attention to ensure your project moves forward, fast."
   },
   {
-    id: 4,
-    title: '4. Design Consistency',
-    problem:
-      'Maintaining design consistency across various platforms and projects can be challenging with an internal team, especially if there are multiple designers involved.',
-    solution:
-      'Trag ensures a cohesive design approach and maintains brand consistency across all design work, reducing the risk of inconsistent messaging and visual identity.',
+    "id": 4,
+    "title": "4. The Design-to-Development Gap",
+    "problem": "Great designs often get lost in translation during the handoff to development, resulting in a final product that doesn't match the original vision.",
+    "solution": "With us, there is no handoff. The designer and developer work in lockstep from day one. This guarantees a pixel-perfect implementation and a cohesive user experience, ensuring what you see in the design is exactly what gets built."
   },
   {
-    id: 5,
-    title: '5. Expertise and Specialization',
-    problem:
-      'Internal teams might lack specialized knowledge or experience in certain areas of design (e.g., advanced UX/UI, motion graphics).',
-    solution:
-      'Trag offers specialized design expertise and the latest design trends, providing high-quality work that might be beyond the capabilities of an internal team.',
+    "id": 5,
+    "title": "5. Lack of a Unified Vision",
+    "problem": "When design and development are separate, it's easy to lose sight of the core user problem, leading to a disconnected and ineffective final product.",
+    "solution": "We operate as a single, cohesive unit obsessed with your success. This personal, unified approach ensures every design decision and line of code is purposefully aligned with your business goals and user needs."
   },
   {
-    id: 6,
-    title: '6 Communication and Coordination',
-    problem:
-      'Coordinating between internal teams and external designers can lead to miscommunications and delays.',
-    solution:
-      "Trag's subscription service provides a streamlined process with clear communication channels, ensuring that projects are executed smoothly and efficiently.",
-  },
-];
+    "id": 6,
+    "title": "6. Communication Silos & Overhead",
+    "problem": "Coordinating between project managers, external agencies, and internal teams creates communication overhead, delays, and costly misunderstandings.",
+    "solution": "You get a single point of contact and direct access to the two people actually building your project. This radically simplifies communication—no layers of bureaucracy, just a direct, personal partnership focused on efficiency."
+  }
+]
 
 function FlipCard({ card }: { card: (typeof cardData)[0] }) {
   const [isFlipped, setIsFlipped] = useState(false);

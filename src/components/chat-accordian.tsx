@@ -16,55 +16,55 @@ const faqData: ChatAccordionItem[] = [
     id: '1',
     question: "Who's behind Trag?",
     answer:
-      "Trag is led by a passionate team Pranshu, a brand strategist and creative mind, and Dinesh, a talented designer and developer. Together, we built Trag to deliver innovative design solutions tailored to each client's unique needs. Our vision is to help brands unlock their full potential through strategic, impactful, and visually stunning designs, while fostering long-lasting relationships built on trust and creativity.",
+      "Trag is a two-person product team: Pranshu, our UI/UX designer and brand strategist, and Dinesh, our full-stack developer. We combine our skills to design, build, and launch exceptional digital products. Our goal is to act as your dedicated team, fostering a close partnership to bring your vision to life from concept to code.",
   },
   {
     id: '2',
     question: 'How does the delivery process work?',
     answer:
-      'Our delivery process is streamlined and efficient. Once you submit a request, we review it within 24 hours and provide an initial timeline. We work in iterative cycles, providing regular updates and incorporating your feedback throughout the process.',
+      'Our process is collaborative and transparent. Once you submit a request, we begin working on it, providing regular updates in a shared Slack channel. We work in iterative cycles for both design and development, ensuring your feedback is incorporated at every stage to get the final result just right.',
   },
   {
     id: '3',
-    question: 'Is there a limit to how many design requests I can have?',
+    question: 'Is there a limit to how many requests I can have?',
     answer:
-      "No, there's no limit! With our unlimited subscription, you can submit as many design requests as you need. We work through them one by one, ensuring each receives the attention and quality it deserves.",
+      "No, there's no limit! You can add as many requests to your queue as you like—whether for design, development, or both. We process them one at a time to ensure each task gets our full, dedicated attention.",
   },
   {
     id: '4',
-    question: 'How fast will I receive my designs?',
+    question: 'How fast will I receive my deliverables?',
     answer:
-      "Most design requests are completed within 48-72 hours. Complex projects may take longer, but we'll always communicate realistic timelines upfront and keep you updated throughout the process.",
+      "Most design and front-end tasks are completed within 48-72 hours. More complex development requests may take longer, but we are committed to constant progress and will always provide clear timelines upfront.",
   },
   {
     id: '5',
-    question: "What if I don't like the design?",
+    question: "What if I don't like the result?",
     answer:
-      "No worries! We offer unlimited revisions until you're completely satisfied. Your feedback is valuable to us, and we'll work together to ensure the final design exceeds your expectations.",
+      "No problem. We offer unlimited iterations. Whether it's a design tweak or a code revision, we'll keep refining the work until it perfectly matches your vision. Your satisfaction is our top priority.",
   },
   {
     id: '6',
-    question: 'Do you make Shopify websites?',
+    question: 'What kind of projects do you handle?',
     answer:
-      "Yes! We specialize in creating beautiful, conversion-optimized Shopify stores. From custom themes to complete e-commerce solutions, we'll help you build an online store that drives sales.",
+      "We handle the entire product lifecycle, from initial UI/UX wireframes to fully deployed web applications. This includes front-end (e.g., React, Next.js), back-end (e.g., Node.js), and database management. If you have a digital product idea, we can design and build it.",
   },
   {
     id: '7',
-    question: 'What does it mean to pause a subscription?',
+    question: 'How do we communicate and track progress?',
     answer:
-      'Pausing your subscription allows you to temporarily stop billing while retaining access to your account and previous work. You can resume anytime without losing your place in the queue or any of your design assets.',
+      'Communication is direct and simple. You\'ll work with us via a shared Slack channel for real-time updates. We use Trello to manage your project backlog, so you always have full visibility into what’s being worked on and what’s up next.',
   },
   {
     id: '8',
-    question: "Why wouldn't I just hire a full-time designer?",
+    question: "Why wouldn't I just hire a full-time designer and developer?",
     answer:
-      'Hiring a full-time designer comes with significant costs - salary, benefits, equipment, and management overhead. With kree8, you get senior-level design expertise on-demand, without the commitment or overhead costs.',
+      "Hiring for two senior roles is a major investment of time and money, including high salaries, benefits, and overhead. With Trag, you get the combined expertise of a senior-level product team immediately, at a fraction of the cost, without any long-term commitments.",
   },
   {
     id: '9',
-    question: 'Can I get refund?',
+    question: 'Can I get a refund?',
     answer:
-      "We offer a 14-day money-back guarantee. If you're not satisfied with our service within the first two weeks, we'll provide a full refund, no questions asked.",
+      'Absolutely. We stand by the quality of our partnership and our work. If you are not satisfied with the service for any reason, we will provide a full refund.',
   },
 ];
 
