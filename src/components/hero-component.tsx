@@ -187,7 +187,7 @@ export default function HomePage() {
       >
         <Button
           size="lg"
-          className="bg-black hover:bg-gray-800 text-white px-8 py-4 text-lg font-medium rounded-full transition-all duration-300 hover:scale-105"
+          className="bg-black hover:cursor-pointer hover:bg-gray-800 text-white px-8 py-4 text-lg font-medium rounded-full transition-all duration-300 hover:scale-105"
         >
           Book a Call
         </Button>

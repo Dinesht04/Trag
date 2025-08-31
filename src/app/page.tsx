@@ -1,6 +1,7 @@
 import { ChatAccordion } from '@/components/chat-accordian';
 import FlipCardsSection from '@/components/common-concerns';
 import { ComparisonTable } from '@/components/comparison-table';
+import SiteFooter from '@/components/footer';
 import HomePage from '@/components/hero-component';
 import ProjectsDoneSection from '@/components/how-to-component';
 import { MotivationalQuote } from '@/components/motivational-quote';
@@ -35,10 +36,13 @@ export default function Home() {
           <MotivationalQuote />
         </div>
 
-        <div>
+        <div id='pricing'>
           <PricingSection />
         </div>
 
+        <div id='footer'>
+          <SiteFooter/>
+        </div>
       </div>
     </>
   );

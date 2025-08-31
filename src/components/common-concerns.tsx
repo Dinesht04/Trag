@@ -95,7 +95,7 @@ function FlipCard({ card }: { card: (typeof cardData)[0] }) {
 export default function FlipCardsSection() {
   return (
     <div className="max-w-6xl  mx-auto">
-      <div className=" pb-10 shadow-xl rounded-[36px]  overflow-hidden">
+      <div className=" pb-10  rounded-[36px]  overflow-hidden">
         <section className="py-2 px-10 max-w-4xl mx-auto ">
           {/* Header */}
           <div className="text-center   py-8 px-6 mb-8">

@@ -19,6 +19,7 @@ export type PricingCardProps = {
   cadence: string
   footnote?: string
   features: Feature[]
+  hideSwitch?: boolean
 }
 
 function CardIcon({ icon }: { icon?: "globe" | "sparkles" }) {
@@ -38,6 +39,7 @@ export function PricingCard({
   cadence,
   footnote,
   features,
+  hideSwitch
 }: PricingCardProps) {
   const [fast, setFast] = useState(tone === "dark")
   const isDark = tone === "dark"
@@ -75,8 +77,9 @@ export function PricingCard({
               {highlight && fast ? <span className="text-emerald-500">{highlight}</span> : null}
             </h3>
           </div>
-
-          <div className="flex items-center gap-2">
+          
+          {hideSwitch ? null : (
+            <div className="flex items-center gap-2">
             <span className={cn("text-sm", isDark ? "text-white/70" : "text-black/60")}>Make it Faster</span>
             <Switch
               checked={fast}
@@ -85,6 +88,8 @@ export function PricingCard({
               className="data-[state=checked]:bg-violet-600"
             />
           </div>
+          ) }
+          
         </div>
 
         {/* Blurb pill */}
@@ -131,22 +136,22 @@ export function PricingCard({
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <Button
             className={cn(
-              "rounded-full font-medium",
+              "rounded-full hover:cursor-pointer font-medium",
               isDark ? "bg-white text-black hover:bg-white/90" : "bg-black text-white hover:bg-black/90",
             )}
-            onMouseEnter={() => setIsBookHovered(true)}
-            onMouseLeave={() => setIsBookHovered(false)}
+            // onMouseEnter={() => setIsBookHovered(true)}
+            // onMouseLeave={() => setIsBookHovered(false)}
           >
             {isBookHovered ? "We will be there" : "Book a Call"}
           </Button>
           <Button
             variant="outline"
             className={cn(
-              "rounded-full font-medium",
+              "rounded-full hover:cursor-pointer font-medium",
               isDark ? "border-white/20 text-black hover:bg-white/90" : "border-black/20  text-black hover:bg-black/5",
             )}
-            onMouseEnter={() => setIsTelegramHovered(true)}
-            onMouseLeave={() => setIsTelegramHovered(false)}
+            // onMouseEnter={() => setIsTelegramHovered(true)}
+            // onMouseLeave={() => setIsTelegramHovered(false)}
           >
             {isTelegramHovered ? "this will be quick" : "Connect on Telegram"}
           </Button>

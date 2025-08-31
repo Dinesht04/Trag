@@ -1,5 +1,6 @@
 import { Check, X } from 'lucide-react';
-import { Stars as Stairs } from 'lucide-react';
+import Image from 'next/image';
+
 
 export function ComparisonTable() {
   const features = [
@@ -149,7 +150,12 @@ export function ComparisonTable() {
                 <th className="text-center py-4 px-6">
                   <div className="flex justify-center space-x-2 items-center space-y-2">
                     <div className="w-8 h-8 bg-gray-100  flex items-center justify-center">
-                      <Stairs className="w-4 h-4 text-gray-600" />
+                      <Image 
+                        src={'trag.svg'}
+                        height={40}
+                        width={300}
+                        alt='trag-logo'
+                      />
                     </div>
                     <span className="font-bold text-lg text-gray-900">
                       Trag
