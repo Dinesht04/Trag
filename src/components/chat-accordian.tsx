@@ -16,7 +16,7 @@ const faqData: ChatAccordionItem[] = [
     id: '1',
     question: "Who's behind Trag?",
     answer:
-      "Trag is a two-person product team: Pranshu, our UI/UX designer and brand strategist, and Dinesh, our full-stack developer. We combine our skills to design, build, and launch exceptional digital products. Our goal is to act as your dedicated team, fostering a close partnership to bring your vision to life from concept to code.",
+      "Trag is a two-person product team: Dinesh, our UI/UX designer and brand strategist, and Pranshu Raj, our full-stack developer. We combine our skills to design, build, and launch exceptional digital products. Our goal is to act as your dedicated team, fostering a close partnership to bring your vision to life from concept to code.",
   },
   {
     id: '2',
