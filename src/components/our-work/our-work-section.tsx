@@ -20,13 +20,13 @@ export function OurWorkSection({
 }: OurWorkSectionProps) {
   const samples: OurWorkCardProps[] = items ?? [
     {
-      title: "QuizVerse",
+      title: "Quiz Platform",
       href: "https://quizverse-sigma.vercel.app/",
       imageSrc: "/quizverse.png",
       imageAlt: "Quizverse hero",
     },
     {
-      title: "Portfolio",
+      title: "Developer Portfolio",
       href: "https://pranshuraj.info",
       imageSrc: "/portfolio.png",
       imageAlt: "Portfolio hero",

@@ -129,7 +129,7 @@ export function PricingCard({
       {/* Price + CTAs */}
       <div className="mt-6 flex flex-col gap-4">
         <div className="flex items-baseline gap-2">
-          <span className="text-3xl font-semibold md:text-4xl">{`$${currentPrice}`}</span>
+          <span className="text-3xl font-semibold md:text-4xl">{`₹${currentPrice}`}</span>
           <span className={cn("text-sm", isDark ? "text-white/70 text-2xl" : "text-black/60 text-2xl")}>{cadence}</span>
         </div>
 

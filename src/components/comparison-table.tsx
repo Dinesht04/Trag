@@ -15,12 +15,12 @@ export function ComparisonTable() {
       agencies: { icon: 'x', text: '$$$ (High retainers & fees)', color: 'text-amber-600' },
     },
     {
-      feature: 'Senior-Level Expertise',
-      trag: { icon: 'check', text: 'Unified Design & Dev Duo', color: 'text-green-600' },
-      fullTime: { icon: 'x', text: 'Requires two separate hires', color: 'text-amber-600' },
+      feature: 'Full-Stack Team',
+      trag: { icon: 'check', text: 'Design & Dev in One Duo', color: 'text-green-600' },
+      fullTime: { icon: 'x', text: 'Requires separate hires', color: 'text-amber-600' },
       agencies: {
         icon: 'x',
-        text: 'Often passed to junior members',
+        text: 'Multiple handoffs between teams',
         color: 'text-amber-600',
       },
     },
@@ -44,7 +44,7 @@ export function ComparisonTable() {
     },
     {
       feature: 'Start Time',
-      trag: { icon: 'check', text: 'Instantly', color: 'text-green-600' },
+      trag: { icon: 'check', text: 'Immediately', color: 'text-green-600' },
       fullTime: {
         icon: 'x',
         text: 'Months to hire & onboard',

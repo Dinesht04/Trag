@@ -45,7 +45,7 @@ export function PricingSection() {
           title="Landing Page Development"
           highlight=""
           blurb="Bring your dream website to life in just days, not months."
-          basePrice={3999}   // Price when the switch is OFF
+          basePrice={9999}   // Price when the switch is OFF
           fastPrice={4999}   // Price when the switch is ON
           cadence="one time"
           footnote="Website development (Framer) +2k"
