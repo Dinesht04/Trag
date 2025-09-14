@@ -16,13 +16,12 @@ const faqData: ChatAccordionItem[] = [
     id: '1',
     question: "Who's behind Trag?",
     answer:
-      "Trag is a two-person product team: Dinesh, our UI/UX designer and brand strategist, and Pranshu Raj, our full-stack developer. We combine our skills to design, build, and launch exceptional digital products. Our goal is to act as your dedicated team, fostering a close partnership to bring your vision to life from concept to code.",
-  },
+      "Trag is a two-person development team composed of two experienced full-stack developers: Dinesh Tyagi and Pranshu Raj. We work together to design, build, and launch exceptional digital products. Our goal is to serve as your dedicated technical partners, working closely with you to transform your vision into a polished final product."},
   {
     id: '2',
     question: 'How does the delivery process work?',
     answer:
-      'Our process is collaborative and transparent. Once you submit a request, we begin working on it, providing regular updates in a shared Slack channel. We work in iterative cycles for both design and development, ensuring your feedback is incorporated at every stage to get the final result just right.',
+      'Our process is collaborative and transparent. Once you submit a request, we begin working on it, providing regular updates in a shared Slack or Whatsapp channel. We work in iterative cycles for both design and development, ensuring your feedback is incorporated at every stage to get the final result just right.',
   },
   {
     id: '3',
@@ -58,7 +57,7 @@ const faqData: ChatAccordionItem[] = [
     id: '8',
     question: "Why wouldn't I just hire a full-time designer and developer?",
     answer:
-      "Hiring for two senior roles is a major investment of time and money, including high salaries, benefits, and overhead. With Trag, you get the combined expertise of a senior-level product team immediately, at a fraction of the cost, without any long-term commitments.",
+      "Hiring for two new roles is a significant investment. With Trag, you gain a dedicated, full-stack development team, immediately available to build your product from concept to code. We provide the efficiency and technical skills you need, without the long-term commitments and overhead of traditional hires.",
   },
   {
     id: '9',
