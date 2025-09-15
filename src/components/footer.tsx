@@ -52,7 +52,7 @@ export function SiteFooter() {
               <GithubIcon />
             </a>
             <a
-              href="#"
+              href="https://github.com/PranshuRaj1"
               aria-label=""
               className="text-muted-foreground transition-colors hover:text-foreground"
             >
