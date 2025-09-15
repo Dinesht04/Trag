@@ -128,8 +128,10 @@ export function ChatAccordion() {
 
             {isOpen && (
               <div className="flex items-end space-x-2">
-                <Avatar className="w-8 h-8 flex-shrink-0">
-                  <AvatarImage src="https://tdc.org/wp-content/uploads/2012/10/Paul-Rand.jpg" />
+                <Avatar className="w-8 rounded-none h-8 flex-shrink-0">
+                  <AvatarImage
+                  width={400}
+                  src="/trag.svg" />
                   <AvatarFallback className="bg-black text-white text-xs">
                     K8
                   </AvatarFallback>

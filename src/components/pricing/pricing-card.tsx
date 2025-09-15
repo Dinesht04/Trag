@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button"
 import { Switch } from "@/components/ui/switch"
 import { cn } from "@/lib/utils"
 import { useState } from "react"
+import Link from "next/link"
+import { ContactModal } from "../contact-modal"
 
 type Feature = { label: string }
 
@@ -46,8 +48,11 @@ export function PricingCard({
   const currentPrice = fast ? fastPrice : basePrice
   const [isBookHovered, setIsBookHovered] = useState(false)
   const [isTelegramHovered, setIsTelegramHovered] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
 
   return (
+    <>
     <section
       className={cn(
         "flex flex-col justify-between rounded-3xl p-4 sm:p-6",
@@ -139,11 +144,16 @@ export function PricingCard({
               "rounded-full hover:cursor-pointer font-medium",
               isDark ? "bg-white text-black hover:bg-white/90" : "bg-black text-white hover:bg-black/90",
             )}
+            onClick={() => setIsModalOpen(true)}
             // onMouseEnter={() => setIsBookHovered(true)}
             // onMouseLeave={() => setIsBookHovered(false)}
           >
             {isBookHovered ? "We will be there" : "Book a Call"}
           </Button>
+          <Link
+           href={"https://t.me/TalkToTrag"}
+           target="_blank"
+          >
           <Button
             variant="outline"
             className={cn(
@@ -155,9 +165,12 @@ export function PricingCard({
           >
             {isTelegramHovered ? "this will be quick" : "Connect on Telegram"}
           </Button>
+          </Link>
         </div>
       </div>
     </section>
+          <ContactModal isOpen={isModalOpen} setIsOpen={setIsModalOpen} />
+</>
   )
 }
 

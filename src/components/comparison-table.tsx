@@ -182,8 +182,8 @@ export function ComparisonTable() {
                   key={index}
                   className="border-b h-[50px] border-gray-200 hover:bg-gray-50/50 transition-colors"
                 >
-                  <td className="w-fit bg-gray-100 ">
-                    <span className="pl-4  text-gray-900  ">{row.feature}</span>
+                  <td className="w-fit text-center bg-gray-100 ">
+                    <span className="pl-4 text-gray-900  ">{row.feature}</span>
                   </td>
                   <td className="py-4 px-6 text-left">
                     <div className="flex items-center  space-x-2">

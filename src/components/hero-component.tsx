@@ -3,6 +3,7 @@
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import { ContactModal } from './contact-modal';
 
 const targetAudiences = ['FOR STARTUPS', 'FOR FOUNDERS', 'FOR ENTERPRISES'];
 
@@ -41,6 +42,7 @@ const AnimatedText = ({
 export default function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showForAnimation, setShowForAnimation] = useState(true);
+  const [isModalOpen,setIsModalOpen] = useState(false);
 
   const prefersReducedMotion = useReducedMotion()
 
@@ -90,6 +92,7 @@ export default function HomePage() {
   }, []);
 
   return (
+    <>
     <main className="  flex flex-col items-center justify-center px-4 py-8">
       {/* Available Status */}
       <motion.div
@@ -186,6 +189,7 @@ export default function HomePage() {
         transition={{ duration: 0.8, delay: 0.6 }}
       >
         <Button
+          onClick={()=>setIsModalOpen(!isModalOpen)}
           size="lg"
           className="bg-black hover:cursor-pointer hover:bg-gray-800 text-white px-8 py-4 text-lg font-medium rounded-full transition-all duration-300 hover:scale-105"
         >
@@ -210,5 +214,7 @@ export default function HomePage() {
         ))}
       </motion.div> */}
     </main>
+    <ContactModal isOpen={isModalOpen} setIsOpen={setIsModalOpen} />
+    </>
   );
 }
